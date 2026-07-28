@@ -1,29 +1,28 @@
 import { Request, Response } from "express";
 import { generateMedicineExplanation } from "../services/openai.service";
+import { medicineRequestSchema } from "../validators/medicine.validator";
 
 export const explainMedicine = async (
     req: Request,
     res: Response
 ) => {
-
     try {
 
-        const { language, ocrText } = req.body;
+        const validation = medicineRequestSchema.safeParse(req.body);
 
-        if (!language || !ocrText) {
-
+        if (!validation.success) {
             return res.status(400).json({
                 success: false,
-                message: "language and ocrText are required."
+                message: validation.error.flatten()
             });
-
         }
 
-        const explanation =
-            await generateMedicineExplanation(
-                language,
-                ocrText
-            );
+        const { language, ocrText } = validation.data;
+
+        const explanation = await generateMedicineExplanation(
+            language,
+            ocrText
+        );
 
         return res.json({
             success: true,
@@ -33,12 +32,9 @@ export const explainMedicine = async (
     } catch (error: any) {
 
         return res.status(500).json({
-
             success: false,
             message: error.message
-
         });
 
     }
-
 };

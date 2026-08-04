@@ -18,7 +18,7 @@ const PORT = Number(process.env.PORT) || 8080;
 app.get("/", (_req, res) => {
     res.json({
         success: true,
-        message: "MedicineAI Backend is running 🚀",
+        message: "MedicineAI Backend is running",
         version: "v1"
     });
 });

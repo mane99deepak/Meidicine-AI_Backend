@@ -13,7 +13,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-const PORT = Number(process.env.PORT) || 3055;
+const PORT = Number(process.env.PORT) || 8080;
 
 app.get("/", (_req, res) => {
     res.json({

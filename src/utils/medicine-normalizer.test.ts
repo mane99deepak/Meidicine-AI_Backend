@@ -9,52 +9,64 @@ import {
 const testCases: MedicineAIResponse[] = [
 
     {
-        medicineName: "Dolo 650",
-        brandName: "Dolo",
-        genericName: "Paracetamol",
-        composition: "Paracetamol",
-        strength: "650mg",
-        dosageForm: "Tablet",
-        primaryUse: "",
-        uses: [],
-        dosage: "",
-        precautions: [],
-        sideEffects: [],
-        consultDoctor: [],
-        disclaimer: ""
-    },
+    medicineName: "Dolo 650",
+    brandName: "Dolo",
+    genericName: "Paracetamol",
+    composition: "Paracetamol",
+    strength: "650 mg",
+    dosageForm: "Tablet",
+
+    identificationConfidence: "HIGH",
+    identificationReason: "Test medicine identity",
+
+    primaryUse: "",
+    uses: [],
+    dosage: "",
+    precautions: [],
+    sideEffects: [],
+    consultDoctor: [],
+    disclaimer: ""
+},
 
     {
-        medicineName: "Dolo-650",
-        brandName: "Dolo",
-        genericName: "Paracetamol",
-        composition: "Paracetamol",
-        strength: "650 mg",
-        dosageForm: "tablets",
-        primaryUse: "",
-        uses: [],
-        dosage: "",
-        precautions: [],
-        sideEffects: [],
-        consultDoctor: [],
-        disclaimer: ""
-    },
+    medicineName: "Dolo-650",
+    brandName: "Dolo",
+    genericName: "Paracetamol",
+    composition: "Paracetamol",
+    strength: "650 mg",
+    dosageForm: "Tablet",
+
+    identificationConfidence: "HIGH",
+    identificationReason: "Test medicine identity",
+
+    primaryUse: "",
+    uses: [],
+    dosage: "",
+    precautions: [],
+    sideEffects: [],
+    consultDoctor: [],
+    disclaimer: ""
+},
 
     {
-        medicineName: "Paracetamol 650",
-        brandName: "",
-        genericName: "Paracetamol",
-        composition: "Paracetamol",
-        strength: "650MG",
-        dosageForm: "tab",
-        primaryUse: "",
-        uses: [],
-        dosage: "",
-        precautions: [],
-        sideEffects: [],
-        consultDoctor: [],
-        disclaimer: ""
-    }
+    medicineName: "Paracetamol 650",
+    brandName: "",
+    genericName: "Paracetamol",
+    composition: "Paracetamol",
+    strength: "650 mg",
+    dosageForm: "Tablet",
+
+    identificationConfidence: "HIGH",
+    identificationReason: "Test medicine identity",
+
+    primaryUse: "",
+    uses: [],
+    dosage: "",
+    precautions: [],
+    sideEffects: [],
+    consultDoctor: [],
+    disclaimer: ""
+}
 ];
 
 console.log("====================================");

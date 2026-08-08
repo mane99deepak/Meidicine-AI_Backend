@@ -82,46 +82,54 @@ function buildCachedResponse(
 ): MedicineAIResponse {
 
     return {
+    medicineName:
+        medicine.identity.medicineName,
 
-        medicineName:
-            medicine.identity.medicineName,
+    brandName:
+        medicine.identity.brandName,
 
-        brandName:
-            medicine.identity.brandName,
+    genericName:
+        medicine.identity.genericName,
 
-        genericName:
-            medicine.identity.genericName,
+    composition:
+        medicine.identity.composition,
 
-        composition:
-            medicine.identity.composition,
+    strength:
+        medicine.identity.strength,
 
-        strength:
-            medicine.identity.strength,
+    dosageForm:
+        medicine.identity.dosageForm,
 
-        dosageForm:
-            medicine.identity.dosageForm,
+    manufacturer:
+        medicine.identity.manufacturer,
 
-        primaryUse:
-            translation.primaryUse,
+    identificationConfidence:
+        "HIGH",
 
-        uses:
-            translation.uses,
+    identificationReason:
+        "Medicine identity was matched against the verified Firestore medicine catalog.",
 
-        dosage:
-            translation.dosage,
+    primaryUse:
+        translation.primaryUse,
 
-        precautions:
-            translation.precautions,
+    uses:
+        translation.uses,
 
-        sideEffects:
-            translation.sideEffects,
+    dosage:
+        translation.dosage,
 
-        consultDoctor:
-            translation.consultDoctor,
+    precautions:
+        translation.precautions,
 
-        disclaimer:
-            translation.disclaimer
-    };
+    sideEffects:
+        translation.sideEffects,
+
+    consultDoctor:
+        translation.consultDoctor,
+
+    disclaimer:
+        translation.disclaimer
+};
 }
 
 

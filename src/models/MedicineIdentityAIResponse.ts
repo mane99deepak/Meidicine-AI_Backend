@@ -3,7 +3,7 @@ export type MedicineIdentificationConfidence =
     "MEDIUM" |
     "LOW";
 
-export interface MedicineAIResponse {
+export interface MedicineIdentityAIResponse {
 
     medicineName: string;
 

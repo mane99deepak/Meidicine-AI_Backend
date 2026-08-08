@@ -1,11 +1,12 @@
+import "./config/env";
+
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 
 import routes from "./routes";
+import { testFirestoreConnection } from "./utils/firebase-test";
 
-dotenv.config();
 
 const app = express();
 
@@ -33,9 +34,15 @@ app.get("/health", (_req, res) => {
 
 app.use("/api/v1", routes);
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log("====================================");
-    console.log("🚀 MedicineAI Backend Started");
-    console.log(`🌐 http://localhost:${PORT}`);
+    console.log("MedicineAI Backend Started");
+    console.log(`Port: ${PORT}`);
     console.log("====================================");
+
+    try {
+        await testFirestoreConnection();
+    } catch (error) {
+        console.error("❌ Firestore connection failed:", error);
+    }
 });
